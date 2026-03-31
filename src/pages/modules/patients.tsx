@@ -4,12 +4,17 @@ import { useNavigate } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { ROUTES } from '@/routes/paths'
+import { apiRequest } from '@/utils/api'
 
 interface IPatientProfile {
   id: string
   firstName: string
   lastName: string
   createdAt: string
+}
+
+interface IPatientsListResponse {
+  data: IPatientProfile[]
 }
 
 export const PatientsPage: React.FC = () => {
@@ -21,12 +26,8 @@ export const PatientsPage: React.FC = () => {
 
   React.useEffect(() => {
     setIsLoading(true)
-    fetch(`${import.meta.env.VITE_BACKEND_API_URL}/patients`, {
-      credentials: 'include',
-    })
-      .then(async res => {
-        if (!res.ok) throw new Error(await res.text())
-        const data = await res.json()
+    apiRequest<IPatientsListResponse>('/patients')
+      .then(data => {
         setPatients(data.data ?? [])
       })
       .catch(e => {
