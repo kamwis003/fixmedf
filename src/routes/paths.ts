@@ -27,14 +27,14 @@ export const ROUTES = {
     DIARY: '/modules/endometriosis/endometriosis-diary',
     VISUALIZATION: '/modules/endometriosis/endometriosis-visualization',
     ADVICE: '/modules/endometriosis/endometriosis-advice',
-    INFOEDITOR: '/modules/endometriosis/endometriosis-info/new'
+    INFOEDITOR: '/modules/endometriosis/endometriosis-info/new',
   },
 
   FERTILITY: {
     CALENDAR: '/modules/fertility/cycle-calendar',
     TRACKING: '/modules/fertility/cycle-tracking',
     EDUCATION: '/modules/fertility/education',
-    CONSULTATION: '/modules/consultation-request'
+    CONSULTATION: '/modules/consultation-request',
   },
   PATIENTS: {
     ROOT: '/modules/patients',

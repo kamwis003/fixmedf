@@ -214,7 +214,7 @@
   "navigation": {
     "platform": "Platforma"
   },
-  "endometriosis":{
+  "endometriosis": {
     "loading": "Ładowanie...",
     "saving": "Zapisywanie…",
     "info": {
@@ -251,7 +251,7 @@
         "imagingtests": "Badania obrazowe (USG/MRI)"
       }
     },
-    "visualization":{
+    "visualization": {
       "title": "Wizualizacja natężenia bólu",
       "subtitle": "Każde pole przedstawia zadeklarowany poziom bólu dla danego dnia.",
       "weekdays": [
@@ -265,7 +265,7 @@
       ],
       "legend": "Legenda",
       "nodata": "Brak danych",
-      "pain":{
+      "pain": {
         "01": "Brak bólu",
         "23": "Niski ból",
         "46": "Umiarkowany ból",
@@ -274,7 +274,7 @@
       },
       "today": "Dzisiaj"
     },
-    "advice":{
+    "advice": {
       "title": "Edukacja",
       "subtitle": "Kompleksowe informacje dotyczące objawów, diagnostyki i leczenia endometriozy.",
       "abouttab": "O endometriozie",
@@ -380,7 +380,35 @@
     "firstName": "Imię",
     "lastName": "Nazwisko",
     "createdAt": "Data utworzenia",
-    "loading": "Ładowanie..."
+    "loading": "Ładowanie...",
+    "detail": {
+      "back": "Wróć do listy",
+      "unknownPatient": "Nieznany pacjent",
+      "errorPatient": "Nie udało się pobrać danych pacjenta.",
+      "errorEntries": "Nie udało się pobrać wpisów dziennika.",
+      "tabs": {
+        "visualization": "Wizualizacja",
+        "prognosis": "Prognoza"
+      },
+      "visualization": {
+        "chartTitle": "Poziom bólu w czasie",
+        "tableTitle": "Wpisy dziennika",
+        "noData": "Brak danych do wyświetlenia.",
+        "date": "Data"
+      },
+      "prognosis": {
+        "title": "Ocena ryzyka endometriozy",
+        "riskDescription": "Wynik obliczany na podstawie wpisów dziennika pacjenta.",
+        "noData": "Brak wpisów do obliczenia prognozy.",
+        "riskLow": "Niskie ryzyko",
+        "riskMedium": "Umiarkowane ryzyko",
+        "riskHigh": "Wysokie ryzyko",
+        "avgPain": "Śr. poziom bólu",
+        "highPainEntries": "Wpisy z bólem ≥7",
+        "totalEntries": "Łączna liczba wpisów",
+        "medicalFactors": "Czynniki medyczne"
+      }
+    }
   },
   "auth": {
     "login": "Zaloguj się",
@@ -482,7 +510,9 @@
   "common": {
     "submitting": "Wysyłanie...",
     "cancel": "Anuluj",
-    "error": "Błąd"
+    "error": "Błąd",
+    "yes": "Tak",
+    "no": "Nie"
   },
   "user": {
     "defaultName": "Użytkownik"
