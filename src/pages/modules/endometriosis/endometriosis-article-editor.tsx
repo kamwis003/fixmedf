@@ -1,7 +1,6 @@
-import { FC, useMemo, useState } from 'react'
+import { type FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDocumentTitle } from '@/hooks/use-document-title'
-import { useAuth } from '@/hooks/use-auth'
 import { apiRequest } from '@/utils/api'
 import { ROUTES } from '@/routes/paths'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
@@ -23,8 +22,6 @@ export const EndometriosisArticleEditor: FC = () => {
   useDocumentTitle(t('endometriosis.info.addarticle'))
 
   const navigate = useNavigate()
-  const { user } = useAuth()
-
   const [form, setForm] = useState<FormState>(initialForm)
   const [isSaving, setIsSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
