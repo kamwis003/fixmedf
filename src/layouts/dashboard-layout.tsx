@@ -22,6 +22,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { useAppSelector } from '@/redux/hooks'
 import { mapProductApiToUi } from '@/pages/products/utils/product-mappers'
+import type { IProductApi } from '@/types/product-api'
 
 function MobileMenuButton() {
   const { setOpenMobile } = useSidebar()
@@ -91,7 +92,7 @@ export const DashboardLayout = () => {
           // Try to find product in Redux state
           const productApi =
             productsState.currentBySlug[slug] ||
-            productsState.products.items.find(p => p.slug === slug)
+            productsState.products.items.find((p: IProductApi) => p.slug === slug)
 
           if (productApi) {
             const product = mapProductApiToUi(productApi, i18n.language)

@@ -1,4 +1,4 @@
-import { FC, useEffect, useMemo, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import { useDocumentTitle } from "@/hooks/use-document-title";
 import { useAuth } from "@/hooks/use-auth";
 import { apiRequest } from "@/utils/api";
@@ -46,7 +46,7 @@ export const EndometriosisDiary: FC = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked } = e.target as HTMLInputElement;
 
     if (name === "hadSurgeryLast6Months" && !checked) {
       setForm((prev) => ({

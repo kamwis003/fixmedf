@@ -231,7 +231,7 @@ export const PatientDetailPage: React.FC = () => {
                           labelFormatter={label =>
                             `${t('patients.detail.visualization.date')}: ${label}`
                           }
-                          formatter={(value: number) => [value, t('endometriosis.diary.painlevel')]}
+                          formatter={(value: number | undefined) => [value ?? 0, t('endometriosis.diary.painlevel')]}
                         />
                         <ReferenceLine
                           y={7}

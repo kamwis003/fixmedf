@@ -1,6 +1,7 @@
 import { useDocumentTitle } from '@/hooks/use-document-title'
 import { ProductTabs } from '@/pages/products/components/product-tabs'
 import type { IProductUi, TViewMode, TabMode } from '@/types/product-ui'
+import type { IProductApi } from '@/types/product-api'
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { SmartFilters } from '@/pages/products/components/smart-filters'
@@ -63,7 +64,7 @@ export const ProductsPage = () => {
   // Filter products locally based on active tab
   const productData = useMemo(() => {
     const filtered =
-      activeTab === 'purchased' ? products.items.filter(p => p.isPurchased) : products.items
+      activeTab === 'purchased' ? products.items.filter((p: IProductApi) => p.isPurchased) : products.items
     return mapProductsApiToUi(filtered, i18n.language)
   }, [products.items, activeTab, i18n.language])
 
@@ -289,7 +290,7 @@ export const ProductsPage = () => {
 
   // Calculate counts for tabs from all cached products
   const availableCount = products.pagination ? products.pagination.total : products.items.length
-  const purchasedCount = products.items.filter(p => p.isPurchased).length
+  const purchasedCount = products.items.filter((p: IProductApi) => p.isPurchased).length
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 pt-6">
