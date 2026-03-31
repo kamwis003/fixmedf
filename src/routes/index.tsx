@@ -29,6 +29,7 @@ import { CycleTracking } from '@/pages/modules/fertility/cycle-tracking'
 import { FertilityEducation } from '@/pages/modules/fertility/education'
 import { ConsultationRequest } from '@/pages/modules/consultation-request'
 import { PatientsPage } from '@/pages/modules/patients'
+import { PatientDetailPage } from '@/pages/modules/patient-detail'
 
 export const router = createBrowserRouter([
   {
@@ -111,61 +112,64 @@ export const router = createBrowserRouter([
                 path: 'payment-cancelled',
                 element: <PaymentCancelledPage />,
               },
-              {  
-              path: 'modules',
-              children: [
-                {
-                  path: 'endometriosis',
-                  children: [
               {
-                path: 'endometriosis-info',
-                element: <EndometriosisInfo />,
-              },
-              {
-                path: 'endometriosis-diary',
-                element: <EndometriosisDiary />,
-              },
-              {
-                path: 'endometriosis-visualization',
-                element: <EndometriosisVisualization />,
-              },
-              {
-                path: 'endometriosis-advice',
-                element: <EndometriosisAdvice />,
-              },
-              {
-                path: 'endometriosis-info/new',
-                element: <EndometriosisArticleEditor />,
-              },
-                  ]
-                },
-                {
-                path: 'fertility',
+                path: 'modules',
                 children: [
-              {
-                path: 'cycle-calendar',
-                element: <CycleCalendar />,
+                  {
+                    path: 'endometriosis',
+                    children: [
+                      {
+                        path: 'endometriosis-info',
+                        element: <EndometriosisInfo />,
+                      },
+                      {
+                        path: 'endometriosis-diary',
+                        element: <EndometriosisDiary />,
+                      },
+                      {
+                        path: 'endometriosis-visualization',
+                        element: <EndometriosisVisualization />,
+                      },
+                      {
+                        path: 'endometriosis-advice',
+                        element: <EndometriosisAdvice />,
+                      },
+                      {
+                        path: 'endometriosis-info/new',
+                        element: <EndometriosisArticleEditor />,
+                      },
+                    ],
+                  },
+                  {
+                    path: 'fertility',
+                    children: [
+                      {
+                        path: 'cycle-calendar',
+                        element: <CycleCalendar />,
+                      },
+                      {
+                        path: 'cycle-tracking',
+                        element: <CycleTracking />,
+                      },
+                      {
+                        path: 'education',
+                        element: <FertilityEducation />,
+                      },
+                    ],
+                  },
+                  {
+                    path: 'consultation-request',
+                    element: <ConsultationRequest />,
+                  },
+                  {
+                    path: 'patients',
+                    children: [
+                      { index: true, element: <PatientsPage /> },
+                      { path: ':id', element: <PatientDetailPage /> },
+                    ],
+                  },
+                ],
               },
-              {
-                path: 'cycle-tracking',
-                element: <CycleTracking />,
-              },
-              {
-                path: 'education',
-                element: <FertilityEducation />,
-              },
-                ]
-                },
-                {
-                path: 'consultation-request',
-                element: <ConsultationRequest />,
-              },
-                {
-                path: 'patients',
-                element: <PatientsPage />,
-              }
-              ],
-            },         
             ],
           },
         ],

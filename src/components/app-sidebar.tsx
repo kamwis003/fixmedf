@@ -120,7 +120,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       },
       {
         title: t('patients.title'),
-        url: ROUTES.PATIENTS,
+        url: ROUTES.PATIENTS.ROOT,
         icon: Box,
         collapsedOnly: true,
       }
