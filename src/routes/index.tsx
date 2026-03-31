@@ -29,6 +29,7 @@ import { CycleTracking } from '@/pages/modules/fertility/cycle-tracking'
 import { FertilityEducation } from '@/pages/modules/fertility/education'
 import { ConsultationRequest } from '@/pages/modules/consultation-request'
 import { PatientsPage } from '@/pages/modules/patients'
+import { PatientDetailPage } from '@/pages/modules/patient-detail'
 
 export const router = createBrowserRouter([
   {

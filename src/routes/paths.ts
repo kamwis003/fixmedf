@@ -36,7 +36,10 @@ export const ROUTES = {
     EDUCATION: '/modules/fertility/education',
     CONSULTATION: '/modules/consultation-request'
   },
-  PATIENTS: '/modules/patients',
+  PATIENTS: {
+    ROOT: '/modules/patients',
+    DETAIL: (id: string) => `/modules/patients/${id}`,
+  },
   // Products routes
   PRODUCTS: {
     ROOT: '/products',
